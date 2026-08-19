@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tontin Binta Ba - gestion simple et humaine de votre tontine.">
+  <title>Tontin Binta Ba | Tableau de bord</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navigation principale">
+      <div class="brand">
+        <div class="brand-mark">TB</div>
+        <div><strong>Tontin</strong><span>Binta Ba</span></div>
+      </div>
+      <div class="side-label">GÉRANCE</div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span>Vue générale</button>
+        <button class="nav-item" data-view="members"><span class="nav-icon">♧</span>Membres <b class="nav-count">3</b></button>
+        <button class="nav-item" data-view="requests"><span class="nav-icon">◷</span>Demandes <b class="nav-count warm">2</b></button>
+        <button class="nav-item" data-view="payments"><span class="nav-icon">₣</span>Cotisations</button>
+        <button class="nav-item" data-view="cycle"><span class="nav-icon">↻</span>Tour de tontine</button>
+      </nav>
+      <div class="side-label lower">OUTILS</div>
+      <nav class="nav-list">
+        <button class="nav-item" data-view="notifications"><span class="nav-icon">◌</span>Notifications</button>
+        <button class="nav-item" data-view="security"><span class="nav-icon">◇</span>Sécurité</button>
+        <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>Paramètres</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-orb">?</span><strong>Besoin d'aide ?</strong><small>Notre équipe vous répond</small><a href="mailto:bonjour@tontinbinta.ba">Nous contacter ↗</a></div>
+        <div class="profile-mini"><div class="avatar avatar-binta">BB</div><div><strong>Binta Ba</strong><span>Gérante</span></div><button aria-label="Menu du profil">•••</button></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" aria-label="Ouvrir le menu">☰</button>
+        <div class="breadcrumbs"><span>Accueil</span><b>/</b><strong id="breadcrumb-current">Vue générale</strong></div>
+        <div class="top-actions"><button class="icon-button notification-button" aria-label="Notifications">♧<i></i></button><div class="top-divider"></div><div class="date-label">Mardi 18 juin 2024</div></div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="page-heading">
+          <div><p class="eyebrow">BONJOUR BINTA <span>✦</span></p><h1 id="page-title">Votre tontin, en confiance.</h1><p class="heading-copy">Voici ce qui se passe dans votre tontin aujourd'hui.</p></div>
+          <button class="primary-button" id="add-member"><span>+</span> Ajouter un membre</button>
+        </section>
+
+        <div id="dashboard-view" class="view-panel">
+          <section class="stat-grid">
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon sage">♧</span><span class="trend positive">+12,5% <small>↗</small></span></div><strong>24</strong><span>Membres actifs</span><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="highlight"></i><i class="highlight"></i></div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon butter">₣</span><span class="trend positive">+8,2% <small>↗</small></span></div><strong>480 000 <small>FCFA</small></strong><span>Collecté ce mois-ci</span><div class="progress-line"><i style="width:78%"></i></div><small class="progress-label">78% de l'objectif mensuel</small></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon coral">◷</span><span class="trend neutral">Ce mois</span></div><strong>02</strong><span>Demandes en attente</span><button class="text-button go-requests">Voir les demandes <span>→</span></button></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-icon sky">↻</span><span class="trend positive">En cours</span></div><strong>Tour 04 <small>/ 12</small></strong><span>Tour actuel</span><div class="cycle-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          </section>
+
+          <section class="content-grid">
+            <article class="panel chart-panel"><div class="panel-heading"><div><h2>Activité du tontin</h2><p>Suivi des cotisations sur les 6 derniers mois</p></div><button class="select-button">6 derniers mois <span>⌄</span></button></div><div class="chart"><div class="y-axis"><span>600k</span><span>450k</span><span>300k</span><span>150k</span><span>0</span></div><div class="chart-area"><div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div><div class="grid-line"></div><div class="grid-line bottom"></div><svg viewBox="0 0 700 230" preserveAspectRatio="none" aria-label="Graphique des cotisations"><defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#86a998" stop-opacity=".34"/><stop offset="1" stop-color="#86a998" stop-opacity="0"/></linearGradient></defs><path d="M0,170 C55,164 70,130 130,142 S210,124 260,145 S330,86 390,104 S450,80 510,98 S580,47 630,62 S675,44 700,30 L700,230 L0,230 Z" fill="url(#area)"/><path d="M0,170 C55,164 70,130 130,142 S210,124 260,145 S330,86 390,104 S450,80 510,98 S580,47 630,62 S675,44 700,30" fill="none" stroke="#447967" stroke-width="3" stroke-linecap="round"/></svg><div class="x-axis"><span>Jan</span><span>Fév</span><span>Mar</span><span>Avr</span><span>Mai</span><span>Juin</span></div></div></div></article>
+            <article class="panel calendar-panel"><div class="panel-heading"><div><h2>Prochain versement</h2><p>Tour 04 · Juin 2024</p></div><button class="round-arrow" aria-label="Voir le calendrier">→</button></div><div class="next-payment"><div class="calendar-date"><span>JUIN</span><strong>25</strong><small>Mardi</small></div><div><strong>Versement mensuel</strong><p>Chaque membre doit verser<br><b>20 000 FCFA</b></p><span class="status-pill due">Dans 7 jours</span></div></div><div class="calendar-note"><span>✦</span><p>22 membres ont déjà payé leur cotisation.</p></div></article>
+          </section>
+
+          <section class="panel table-panel"><div class="panel-heading"><div><h2>Activité récente</h2><p>Les dernières actions de votre tontin</p></div><button class="text-button">Tout voir <span>→</span></button></div><div class="table-scroll"><table><thead><tr><th>MEMBRE</th><th>ACTION</th><th>MONTANT</th><th>DATE</th><th>STATUT</th></tr></thead><tbody><tr><td><div class="member-cell"><div class="avatar avatar-green">AN</div><div><strong>Aïssatou Ndiaye</strong><small>Membre depuis mars 2024</small></div></div></td><td>Cotisation mensuelle</td><td><strong>20 000 FCFA</strong></td><td>18 juin 2024</td><td><span class="status-pill paid">Payé</span></td></tr><tr><td><div class="member-cell"><div class="avatar avatar-yellow">MS</div><div><strong>Moussa Sarr</strong><small>Membre depuis janvier 2024</small></div></div></td><td>Cotisation mensuelle</td><td><strong>20 000 FCFA</strong></td><td>17 juin 2024</td><td><span class="status-pill paid">Payé</span></td></tr><tr><td><div class="member-cell"><div class="avatar avatar-pink">FN</div><div><strong>Fatou Niang</strong><small>Membre depuis février 2024</small></div></div></td><td>Retard de paiement</td><td><strong>20 000 FCFA</strong></td><td>16 juin 2024</td><td><span class="status-pill late">En retard</span></td></tr></tbody></table></div></section>
+        </div>
+
+        <div id="other-view" class="view-panel hidden"><section class="empty-panel"><div class="empty-icon">✦</div><h2 id="other-title">Membres</h2><p>Cette section est prête à accueillir vos données. Les actions de gestion seront disponibles ici.</p><button class="primary-button" id="empty-action">Ajouter un membre <span>+</span></button></section></div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="member-modal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Fermer">×</button><p class="eyebrow">NOUVELLE DEMANDE</p><h2 id="modal-title">Ajouter un membre</h2><p class="modal-copy">Créez une invitation pour une personne de confiance.</p><form id="member-form"><label>Nom complet<input type="text" placeholder="Ex. Aïssatou Ndiaye" required></label><label>Numéro de téléphone<input type="tel" placeholder="+221 77 000 00 00" required></label><label>Tour de tontine<select><option>Tour 04 · Juin 2024</option><option>Tour 05 · Juillet 2024</option></select></label><div class="modal-actions"><button type="button" class="secondary-button" id="modal-cancel">Annuler</button><button type="submit" class="primary-button">Envoyer l'invitation</button></div></form></div></div>
+  <div class="toast hidden" id="toast">Invitation envoyée avec succès <span>✓</span></div>
+  <script src="app.js"></script>
+</body>
+</html>
